@@ -75,6 +75,18 @@ public class LeCalc extends JFrame{
         add(p);
         
         But1.addActionListener(new One());
+        But2.addActionListener(new Two());
+        But3.addActionListener(new Three());
+        But4.addActionListener(new Four());
+        But5.addActionListener(new Five());
+        But6.addActionListener(new Six());
+        But7.addActionListener(new Seven());
+        But8.addActionListener(new Eight());
+        But9.addActionListener(new Nine());
+        But0.addActionListener(new Zero());
+
+        mulBut.addActionListener(new Mul());
+        divBut.addActionListener(new Div());
         addBut.addActionListener(new Add());
         equalBut.addActionListener(new Equal());
         subBut.addActionListener(new Sub());
@@ -90,6 +102,117 @@ public class LeCalc extends JFrame{
             display = j.getText();
            
         }
+    }
+
+    class Two implements ActionListener {
+        public void actionPerformed(ActionEvent e){
+            display = j.getText();
+            j.setText(display + "2");
+            display = j.getText();
+           
+        }
+    }
+
+    class Three implements ActionListener {
+        public void actionPerformed(ActionEvent e){
+            display = j.getText();
+            j.setText(display + "3");
+            display = j.getText();
+           
+        }
+    }
+
+    class Four implements ActionListener {
+        public void actionPerformed(ActionEvent e){
+            display = j.getText();
+            j.setText(display + "4");
+            display = j.getText();
+           
+        }
+    }
+
+    class Five implements ActionListener {
+        public void actionPerformed(ActionEvent e){
+            display = j.getText();
+            j.setText(display + "5");
+            display = j.getText();
+           
+        }
+    }
+
+    class Six implements ActionListener {
+        public void actionPerformed(ActionEvent e){
+            display = j.getText();
+            j.setText(display + "6");
+            display = j.getText();
+           
+        }
+    }
+
+    class Seven implements ActionListener {
+        public void actionPerformed(ActionEvent e){
+            display = j.getText();
+            j.setText(display + "7");
+            display = j.getText();
+           
+        }
+    }
+
+    class Eight implements ActionListener {
+        public void actionPerformed(ActionEvent e){
+            display = j.getText();
+            j.setText(display + "8");
+            display = j.getText();
+           
+        }
+    }
+
+    class Nine implements ActionListener {
+        public void actionPerformed(ActionEvent e){
+            display = j.getText();
+            j.setText(display + "9");
+            display = j.getText();
+           
+        }
+    }
+
+    class Zero implements ActionListener {
+        public void actionPerformed(ActionEvent e){
+            display = j.getText();
+            j.setText(display + "0");
+            display = j.getText();
+           
+        }
+    }
+
+    class Mul implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            mul = true;
+            display = j.getText();
+            if (display.charAt(display.length() - 1) != ' ') {
+                j.setText(display + " * ");
+                display = j.getText();
+            }else{
+                j.setText(display + "* ");
+                display = j.getText();
+            }
+        }
+        
+    }
+
+    class Div implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            div = true;
+            display = j.getText();
+            if (display.charAt(display.length() - 1) != ' ') {
+                j.setText(display + " / ");
+                display = j.getText();
+            }else{
+                j.setText(display + "/ ");
+                display = j.getText();
+            }
+        }
+        
     }
 
     class Add implements ActionListener {
@@ -137,6 +260,7 @@ public class LeCalc extends JFrame{
             }
             else if(display.charAt(display.length()-2) == '-'){
                 display = display.substring(0, display.length() - 2) + "+ ";
+                j.setText(display);
             }
             else if (display.charAt(display.length() - 2) == '/') {
 
@@ -147,12 +271,10 @@ public class LeCalc extends JFrame{
                 sub = true;
                 display = j.getText();
                 if (display.charAt(display.length() - 1) != ' ') {
-                    display = j.getText();
                     j.setText(display + " - ");
                     display = j.getText();
                     add = true;
                 }else{
-                    display = j.getText();
                     j.setText(display + "- ");
                     display = j.getText();
                     add = true;
